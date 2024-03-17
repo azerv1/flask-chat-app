@@ -1,0 +1,103 @@
+/* General layout and alignment */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Center content vertically */
+}
+
+/* Styling for buttons */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.join button,
+.history button,
+.create-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.join button:hover,
+.history button:hover,
+.create-btn:hover {
+    background-color: #45a049;
+}
+
+/* Styling for message box */
+.message-box {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Styling for message container */
+.messages {
+    overflow-y: auto; /* Enable vertical scroll if necessary */
+    flex: 1;
+    padding: 10px;
+}
+
+/* Styling for message inputs */
+.inputs {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#message {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Styling for message text */
+.text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Additional styling for text elements */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.muted {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .message-box {
+        width: 90vw;
+    }
+}

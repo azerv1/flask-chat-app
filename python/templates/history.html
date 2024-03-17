@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="message-box">
+    <h2>Chat Room History for: {{code}}</h2>
+    <div class="messages" id="messages"></div>
+    {% for message in messages%}
+    <div class="message">
+        {{message}}
+    </div>    
+    {% endfor%}
+</div>
+{% endblock %}

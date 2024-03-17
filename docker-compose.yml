@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  python-server:
+    build:
+      context: ./python
+      dockerfile: Dockerfile.dev
+    environment:
+      - SERVER_HOST=python-server
+      - SERVER_PORT=5000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SECRET_KEY=1
+    depends_on:
+      - redis  
+
+  redis:
+    image: redis:latest
+  
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4000:80"
+    
+    depends_on:
+      - python-server
+
